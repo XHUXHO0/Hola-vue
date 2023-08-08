@@ -12,10 +12,15 @@
         const vm = Vue.createApp({
             data() {
                 return {
-                    text:"<p>yo nunca nunca</p>"
+                    counter:0
                 };
             },
-            template:'<div v-html="text" ></div>'
+            methods:{
+                increment(){
+                    this.counter++; // con this se accede a todo el componente como sus variables y elementos
+                }
+            },
+            template:'<button v-on:click="increment">{{ counter }}</button> <button v-on:keyup="increment">{{ counter }}</button>'
         }).mount("#app");
 
         console.log(vm);
