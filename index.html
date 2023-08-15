@@ -16,11 +16,11 @@
                 };
             },
             methods:{
-                increment(){
-                    this.counter++; // con this se accede a todo el componente como sus variables y elementos
+                submit(e){
+                    e.preventDefault();
                 }
             },
-            template:'<button v-on:click="increment">{{ counter }}</button> <button v-on:keyup="increment">{{ counter }}</button>'
+            template:'<form v-on:submit="submit"><button >{{ counter }}</button></form>'
         }).mount("#app");
 
         console.log(vm);
